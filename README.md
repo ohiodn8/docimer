@@ -2,27 +2,29 @@
 
  Docimer is a simple Ruby on Rails 5 CMS for static pages. It is more of a Rails application that acts like a CMS; meaning its a built Rails application that gives you the option to create and edit its content.
 
-The idea is to develop websites with ease (without having to write codes). 
+The idea is to develop websites with ease (and without having to write codes). 
 
 ## Installing Docimer
 
-Click the link to check out the Documentation
+Click the <a href="https://ohiodn8.github.io/Docimer/" target="_blank">link</a> to check out the <a href="https://ohiodn8.github.io/Docimer/" target="_blank">Documentation</a>
+
 
 * first download the rails installer (that's if you don't have rails running on your machine).
 
-* Next Step: you have to clone the Docimer app from the GitHub repository, or download the zip version (remember to unzip).
+* Next Step: you have to clone the Docimer app from the GitHub repository, or <a href="https://github.com/ohiodn8/Docimer/archive/master.zip" target="_blank">
+download</a> the zip version (remember to unzip).
 
 * Now, lets start the ruby on rails server. Follow these steps =>
 
 In the command prompt (for Windows) =>
 
-cd \sites/docimer
+<pre><code>cd \sites/docimer</code></pre>
 
-bundle install
+<pre><code>bundle install</code></pre>
 
-rails db:migrate
+<pre><code>rails db:migrate</code></pre>
 
-rails s
+<pre><code>rails s</code></pre>
 
 And that's it for Windows. Head over to a a browser and load =>
 
@@ -35,5 +37,5 @@ http://localhost:3000/cmsadmins/sign_up
 * ...
 
 
-## The Link provides a better guide to installation Docimer.
+## The <a href="https://ohiodn8.github.io/Docimer/" target="_blank">link</a> provides a better guide to installing Docimer.
 
