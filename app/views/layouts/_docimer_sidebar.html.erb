@@ -1,0 +1,167 @@
+<!-------- Docimer SideBar Contents -------->
+<div class="container-fluid text-center side">
+    
+<!-------- Docimer SideBar Static navbar -------->
+<ul class="docile-bar" oncontextmenu="return false">
+    <li><a class="active"><strong><em>Docimer Admin!</em></strong></a></li>
+          <li><%= link_to "Account", edit_cmsadmin_registration_path %></li>
+          <li><%= link_to "Sign out", destroy_cmsadmin_session_path, :method => :delete %></li>
+</ul><br>       
+    
+ <!-------- Docimer SideBar Home Section --------> 
+<div class="col-md-12">      
+    <div class="panel panel-danger">
+      <div class="panel-heading" align="center">Builder<br></div>
+      <div class="panel-body">    
+            <small>
+                <table class="table">
+                    <tbody>
+                        <tr class="default"><%= form_with(model: @template, local: true) do |f| %> 
+                        <td><strong>Header  </strong></td>
+                        <td><%= f.select :bar, options_for_select([["Select", ""], "1", "2", "3", "4", "5", "6"]) %></td> 
+                        <td><%= f.submit "Go", method: :get %></td>    
+                        </tr> <% end %>                     
+                        <% if  Home.all.count == 1 %>
+                        <% @homes.each do |home| %>
+                        <tr class="info">
+                        <td><strong>HomePage </strong></td>
+                        <td><%= link_to 'Edit Home', edit_home_path(home), method: :get, class: "btn btn-primary btn-xs" %></td> 
+                        <td><%= link_to 'Destroy Home', home, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>    
+                        <% end %>
+                        <% else %>
+                        <td><strong>HomePage </strong></td>
+                        <td><%= link_to 'New Home', new_home_path, method: :get, class: "btn btn-primary btn-sm" %></td>
+                        <td> --- </td>                            
+                        </tr>     
+                        <% end %>
+                        <tr class="default">
+                        <td><strong>Pages </strong></td>
+                        <td><%= link_to 'New Page', new_page_path, method: :get, class: "btn btn-primary btn-xs" %></td> 
+                        <td><%= link_to 'Pages', pages_path, method: :get, class: "btn btn-primary btn-xs" %></td>    
+                        </tr>
+                        <tr class="info">
+                        <td><strong>Blogs </strong></td>
+                        <td><%= link_to 'New Blog', new_blog_path, method: :get, class: "btn btn-primary btn-xs" %></td> 
+                        <td><%= link_to 'Blogs', blogs_path, method: :get, class: "btn btn-primary btn-xs" %></td>    
+                        </tr>                          
+                    </tbody>
+                </table>
+            </small>
+        </div> 
+    </div>             
+</div>
+    
+    
+ <!-------- Docimer SideBar Design Section -------->        
+  <div class="col-md-12">     
+    <div class="panel panel-warning">
+      <div class="panel-heading" align="center">Design<br></div>
+      <div class="panel-body">
+            <small>
+                <table class="table">
+                    <tbody> 
+                    <%= form_with(model: @design, local: true) do |form| %>    
+                        <tr class="default">
+                        <td><%= form.collection_select :text_color_id, TextColor.all, :id , :name, :include_blank => "Text Color" %></td>    
+                            
+                        <td><%= form.collection_select :body_color_id, BodyColor.all, :id , :name, :include_blank => "Body Color" %></td> 
+                        <td><%= form.submit "Select Design", method: :get %></td>    
+                        </tr>
+                    <% end %> 
+                         <tr class="danger text-center"> 
+                            <th class="text-center">Text Color</th>
+                            <th class="text-center"> -- </th>
+                            <th class="text-center">Body Color</th>
+                        </tr>            
+                        <% @designs.each do |design| %>
+                          <tr class="default">  
+                            <td><%= design.text_color.name %></td>
+                            <td><em style="color: red;"><--current--></em></td>   
+                            <td><%= design.body_color.name %></td>
+                          </tr>     
+                        <% end %> 
+                           <tr class="danger">  
+                            <td><%= link_to 'New Text Color', new_text_color_path, class: "btn btn-default btn-xs" %></td>
+                            <td>-<small><strong>Add Colors Here</strong></small>-</td>   
+                            <td><%= link_to 'New Body Color', new_body_color_path, class: "btn btn-default btn-xs" %></td>
+                          </tr>                         
+                    </tbody>
+                </table>
+            </small>                                  
+        </div>
+      </div>
+    </div><br>
+ 
+ <!-------- Add Remove Blogs from Navbar -------->        
+<div class="col-md-12">     
+    <div class="panel panel-success">
+      <div class="panel-heading" align="center">Add/Remove Blogs from Navbar<br></div>
+      <div class="panel-body">        
+        <%= form_with(model: @section, local: true) do |form| %>
+            <%= label_tag 'Add Blog to Header', 'Add Blog' %>
+            <%= check_box_tag 'section[option][]', 'Add Blog', checked('Add Blog') %>
+            <%= label_tag 'Remove Blog from Header', 'Remove Blog' %>
+            <%= check_box_tag 'section[option][]', '', checked('') %>
+            <%= form.submit "Go", method: :get %>
+        <% end %>
+        </div>
+      </div>   
+</div>  
+    
+<div class="col-md-12">     
+    <div class="panel panel-success">
+      <div class="panel-heading" align="center">Miscellaneous<br></div>
+      <div class="panel-body">
+            <small>
+                <table class="table">
+                    <tbody>                       
+                        <% if  Logotext.all.count == 1 %>
+                        <% @logotexts.each do |logotext| %>
+                        <tr class="default">
+                        <td><strong>Logo Text </strong></td>
+                        <td><%= link_to 'Edit Logo', edit_logotext_path(logotext), method: :get, class: "btn btn-info btn-xs" %></td> 
+                        <td><%= link_to 'Destroy Logo', logotext, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>    
+                        <% end %>
+                        <% else %>
+                        <td><strong>Logo Text </strong></td>
+                        <td><%= link_to 'New Logo', new_logotext_path, method: :get, class: "btn btn-info btn-xs" %></td>
+                        <td> --- </td>                            
+                        </tr>     
+                        <% end %>
+                        </tbody><tbody>
+                        <% if  Navtext.all.count == 1 %>
+                        <% @navtexts.each do |navtext| %>
+                        <tr class="default">
+                        <td><strong>Nav Text </strong></td>
+                        <td><%= link_to 'Edit NavText', edit_navtext_path(navtext), method: :get, class: "btn btn-info btn-xs" %></td> 
+                        <td><%= link_to 'Destroy NavText', navtext, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>    
+                        <% end %>
+                        <% else %>
+                        <td><strong>Nav Text </strong></td>
+                        <td><%= link_to 'New NavText', new_navtext_path, method: :get, class: "btn btn-info btn-xs" %></td>
+                        <td> --- </td>                            
+                        </tr>     
+                        <% end %>       
+                        </tbody><tbody>
+                        <% if  Footertext.all.count == 1 %>
+                        <% @footertexts.each do |footertext| %>
+                        <tr class="default">
+                        <td><strong>Footer Text </strong></td>
+                        <td><%= link_to 'Edit FooterText', edit_footertext_path(footertext), method: :get, class: "btn btn-info btn-xs" %></td> 
+                        <td><%= link_to 'Destroy FooterText', footertext, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>    
+                        <% end %>
+                        <% else %>
+                        <td><strong>Footer Text </strong></td>
+                        <td><%= link_to 'New FooterText', new_footertext_path, method: :get, class: "btn btn-info btn-xs" %></td>
+                        <td> --- </td>                            
+                        </tr>     
+                        <% end %>                      
+                    </tbody>
+                </table>
+            </small>
+        </div>
+      </div>   
+</div>      
+</div>    
+    
+    

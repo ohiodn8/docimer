@@ -1,0 +1,16 @@
+<div class="jumbotron text-center">
+<% if cmsadmin_signed_in? %>     
+  <h1><%= best_in_place @page, :title, :place_holder => "[[Click me to add content]]" %><small><small><span class="glyphicon glyphicon-pencil"></span></small></small></h1>
+  <h4><%= best_in_place @page, :sub_title, :place_holder => "[[Click me to add content]]" %><small><span class="glyphicon glyphicon-pencil"></span></small></h4> 
+<% else %>
+  <h1><%= @page.title %></h1>
+  <h4><%= @page.sub_title %></h4>     
+<% end %>    
+</div>
+  
+<div style="word-wrap:break-word;" class="
+    <% @templates.each do |template| %>
+        <% if template.bar == 5 %>container-fluid<% else %>container<% end %>
+    <% end%>">
+<p><%= @page.body.html_safe %></p>
+</div>

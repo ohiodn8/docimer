@@ -1,0 +1,12 @@
+<h1>New Navtext</h1>
+
+
+<% if  Navtext.all.count == 1 %>
+<div class="container">
+    <br><br>
+    <h1>Nav text <em>exist</em> now. Edit or Delete the current Nav text</h1>
+    <br><br>
+</div>    
+<% else %>
+<%= render 'form', navtext: @navtext %>
+<% end %>

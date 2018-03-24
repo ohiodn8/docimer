@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        <% if @logotexts.present? %>
+            <% @logotexts.each do |logotext| %>
+                <%= logotext.text %>
+            <% end %>
+        <% else %>
+             Docimer          
+        <% end %>    
+    </title>
+    <meta name="description" content="<% @homes.each do |home| %> <%= home.sub_title %> <% end %>">  
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>      
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<% if cmsadmin_signed_in? %>    
+    <body>
+        <% if @designs.present? %>
+                <% @designs.each do |design| %>
+                    <div class="col-md-9"  style="color: <%= design.text_color.color %>; background-color: <%= design.body_color.color %>;">
+                <% end %>    
+            <% else %> 
+                <div class="col-md-9"  style="color: #000; background-color: #fff;">    
+        <% end %>     
+            <% if @templates.present? %>        
+                <% @templates.each do |template| %>
+                    <% if template.bar == 1 %><%= render "layouts/hd/header" %> <% elsif template.bar == 2  %> <%= render "layouts/hd/header2" %>
+                    <% elsif template.bar == 3  %> <%= render "layouts/hd/header3" %> <% elsif template.bar == 4  %> <%= render "layouts/hd/header4" %>
+                    <% elsif template.bar == 5  %> <%= render "layouts/hd/header5" %> <% elsif template.bar == 6  %> <%= render "layouts/hd/header6" %>
+                    <% else %> <%= render "layouts/hd/header" %>
+                    <% end %> 
+                <% end %>
+            <% else %> 
+                <%= render "layouts/hd/header" %>                
+            <% end %> 
+            <!-- FLASH --> 
+            <% if flash %> <% flash.each do |name, msg| %> 
+                <div class="alert alert-info alert-dismissable" style="position:absolute; z-index:999; width: 95%;"> 
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> 
+                  <h4><%= content_tag(:div, msg, class: "text-center") %></h4> 
+                </div> 
+              <% end %> 
+            <% end %>       
+            <%= yield %>
+                <%= render "layouts/footer" %> 
+        </div>     
+        <div class="col-md-3">      
+              <%= render "layouts/docimer_sidebar" %>
+        </div>   
+    </body>
+    
+<% else %> 
+        
+        <% if @designs.present? %>
+                <% @designs.each do |design| %>
+                    <body  style="color: <%= design.text_color.color %>; background-color: <%= design.body_color.color %>;">
+                <% end %>    
+            <% else %> 
+                <body  style="color: #000; background-color: #fff;">    
+        <% end %> 
+            <% if @templates.present? %>        
+                <% @templates.each do |template| %>
+                    <% if template.bar == 1 %><%= render "layouts/hd/header" %> <% elsif template.bar == 2  %> <%= render "layouts/hd/header2" %>
+                    <% elsif template.bar == 3  %> <%= render "layouts/hd/header3" %> <% elsif template.bar == 4  %> <%= render "layouts/hd/header4" %>
+                    <% elsif template.bar == 5  %> <%= render "layouts/hd/header5" %> <% elsif template.bar == 6  %> <%= render "layouts/hd/header6" %>
+                    <% else %> <%= render "layouts/hd/header" %>
+                    <% end %> 
+                <% end %>
+            <% else %> 
+                <%= render "layouts/hd/header" %>                
+            <% end %>  
+            <!-- FLASH --> 
+             <% flash.each do |name, msg| %> 
+                <div class="alert alert-info alert-dismissable" style="position:absolute; z-index:999; width: 100%;"> 
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> 
+                  <h4><%= content_tag(:div, msg, class: "text-center") %></h4> 
+                </div> 
+             <% end %>        
+        <%= yield %> 
+    <%= render "layouts/footer" %>    
+    </body>
+<% end %> 
+     
+</html>
+

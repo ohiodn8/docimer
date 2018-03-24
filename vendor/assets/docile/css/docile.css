@@ -1,0 +1,88 @@
+//Docimer Sidebar Text Heading
+.cypher-text { 
+    background-color: darkcyan; 
+    color: white;
+}
+
+
+//Docimer CMS SideBar
+.side {
+  width: 450px;    
+  position: fixed;
+  opacity: .99;  
+  background: linear-gradient(skyblue, white, skyblue);    
+  background-size: cover;   
+  height: 100%;
+  overflow-y: auto;
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+} 
+
+//Docimer CMS SideBar NavBar
+ul.docile-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+li a.header3:hover {
+    background-color: #DCDCDC;
+}
+
+//HomePage Image Header
+.image-header {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(white, white, white);   
+    opacity: 0.99;     
+    color: black;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+footer {
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+    background-color: #DCDCDC;
+}
+
+
+.push {
+  height: 50px;
+}
+
+.pushr {
+  min-height: 50vh;
+}

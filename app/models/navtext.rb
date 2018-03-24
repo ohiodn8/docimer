@@ -1,0 +1,2 @@
+class Navtext < ApplicationRecord
+end

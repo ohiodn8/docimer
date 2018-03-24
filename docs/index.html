@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Docimer Docs</title>
+
+        <style>
+            body {    
+              font-family: Arial, Helvetica, sans-serif;
+              margin: 0;    
+            }        
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #C0C0C0;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a.nav {
+                display: block;
+                color: #FFFFFF;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover {
+                background-color: #00BFFF;
+            }
+            
+            .nav-right { 
+                padding-top: 2px;
+                float:right;
+            }
+            .container {
+                margin-left: 100px; 
+                margin-right: 100px;   
+                } 
+            .content {
+                padding-left: 100px; 
+                padding-right: 100px; 
+                line-height: 1.8;
+                font-size: 18px;
+                word-wrap: break-word;
+                width: 700px;
+                }                
+        </style>        
+    </head>
+
+<body>
+
+<ul>
+    <div class="container">
+      <li><a class="active nav" href="#home"><big><strong>Docimer Docs</strong></big></a></li>
+      <span class="nav-right">    
+          <li><a href="#installation" class="nav">Installation</a></li>
+          <li><a href="#using-docimer" class="nav">Using Docimer</a></li>
+          <li><a href="#about" class="nav">About</a></li>
+      </span>    
+    </div>    
+</ul>
+
+
+<div class="container content">
+<h1 style="line-height: 1.8;" align="center"><font face="Verdana" color="#630000">Docimer Documentation</font><br></h1><hr><p style="line-height: 1.8;">
+
+      
+  <h2 id="installation">Installation</h2>  
+    <p style="line-height: 1.8;"><b>To get started on a Windows local machine:</b> </p>
+
+        <li><p>first download the <a href="http://installrails.com/" target="_blank">rails installer</a>.
+        Just like WordPress where you need LAMP (for Linux) or WAMP (for Windows, A: Apache, M: MySql, P: PHP), for Docimer, you'll need the <a href="http://installrails.com/" target="_blank">rails installer</a>.</p></li>
+
+
+        <li><p>Next Step: you have to clone the Docimer app from the GitHub repository, or download the zip version  (remember to unzip). For Windows user, create a folder called sites in the root of your machine (e.g C:\Sites ). Place you docimer folder in there (e.g. C:\Sites\docimer ). It can be anywhere, but for the sake of this tutorial, we'll leave it there.</p></li>
+
+
+        <li><p>Now, we've installed the rails installer, and have a copy of Docimer in the sites folder in the C: drive. Now, lets start the ruby on rails server. Follow these steps =></p>
+
+
+        <p>In the command prompt (for Windows) => </p>
+        <pre style="background-color: lightgrey"><code>cd \sites/docimer</code></pre>    
+        <pre style="background-color: lightgrey"><code>bundle install</code></pre> 
+        <pre style="background-color: lightgrey"><code>rails db:migrate</code></pre> 
+        <pre style="background-color: lightgrey"><code>rails s</code></pre> 
+        </li>     
+
+
+        <li><p>And that's it for Windows. Head over to a a browser and load =></p> 
+
+        <p><em><a href="http://localhost:3000">http://localhost:3000</a></em></p>
+
+
+        <p>You should see Docimer running (probably a blank page with a header & footer). To sign up =></p>
+
+        <p><em><a href="http://localhost:3000/cmsadmins/sign_up">http://localhost:3000/cmsadmins/sign_up</a></em></p>
+
+        To sign in =>
+
+        <p><em><a href="http://localhost:3000/cmsadmins/sign_in">http://localhost:3000/cmsadmins/sign_in</a></em></p>
+        </li> <br>
+    <br> 
+</div> <br><br>
+    
+<div class="container content">            
+    <p style="line-height: 1.8;"><b>For Linux:</b> </p>
+        <li><p>follow the <a href="http://installrails.com/" target="_blank">rails installer</a> steps for Linux (from the rails installer site). On my end, I prefer using <a href="https://rvm.io/rvm/install" target="_blank">RVM</a> to install Rails on Linux (mostly Ubuntu). </p></li>
+
+        <li><p>Next Step: you have to clone the Docimer app from the GitHub repository, or download the zip version  (remember to unzip). I'll assume your folder is in <code style="background-color: lightgrey">/home/[username]/sites/docimer</code>. It can be anywhere, but for the sake of this tutorial, we'll leave it there.For me, its in <code style="background-color: lightgrey">/home/ubuntu/sites/docimer</code></p></li>
+
+
+        <li><p>Now, we've installed Ruby on Rails, and have a copy of Docimer in the sites folder in the C: drive. Now, lets start the ruby on rails server. From your Docimer folder =></p>
+
+
+        <p>In the terminal (for Linux) => </p>   
+        <pre style="background-color: lightgrey"><code>bundle install</code></pre> 
+        <pre style="background-color: lightgrey"><code>rails db:migrate</code></pre> 
+        <pre style="background-color: lightgrey"><code>rails s</code></pre> 
+        </li>     
+
+
+        <li><p>And that's it for Linux. Head over to a a browser and load =></p> 
+
+        <p><em><a href="http://localhost:3000">http://localhost:3000</a></em></p>
+            <p><small><b>NB: if its on a Cloud Server e.g. AWS Ec2, remember to open port 3000 in the Security Group.</b></small></p>
+
+
+        <p>You should see Docimer running (probably a blank page with a header & footer). To sign up =></p>
+
+        <p><em><a href="http://localhost:3000/cmsadmins/sign_up">http://localhost:3000/cmsadmins/sign_up</a></em></p>
+
+        To sign in =>
+
+        <p><em><a href="http://localhost:3000/cmsadmins/sign_in">http://localhost:3000/cmsadmins/sign_in</a></em></p>
+        </li> <br>
+  
+</div> 
+    
+    
+    
+<div class="container content">
+
+      
+  <h2>Using Docimer</h2>  
+    <p style="line-height: 1.8;" id="using-docimer"><font face="Verdana"> <span style="font-size: 18px;">At this point, we have Docimer installed and running on localhost port 3000.Follow the link below to login to the cms admin interface =&gt; </span></font></p>
+    <p style="line-height: 1.8;"><font face="Verdana" style="background-color: lightgrey"><a href="http://localhost:3000/cmsadmin/sign_up"><span style="font-size: 18px;">http://localhost:3000/cmsadmin/sign_up</span></a></font><span style="font-size: 18px;"> </span></p><p style="line-height: 1.8;"><font face="Verdana"><br></font></p><p style="line-height: 1.8;"><font face="Verdana"><span style="font-size: 18px;">Create your new admin account and you should be redirected to the home page with a side bar. The side bar has everything you'll require to build the site from start to finish. </span></font><br></p><p style="line-height: 1.8;"><br></p><p style="line-height: 1.8;"> </p><p style="line-height: 1.8;"><br></p><p style="line-height: 1.8;"><br></p>
+<p style="line-height: 1.8;"><br></p><p style="line-height: 1.8;"><br></p>
+    <br> 
+</div> <br><br>    
+
+</body>
+</html>

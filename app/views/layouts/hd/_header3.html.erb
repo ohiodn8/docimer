@@ -1,0 +1,28 @@
+<!-- Static navbar -->
+<ul class="docile-bar navbar" style="background-color: #A9A9A9;">
+    <li>
+        <a class="header3 active" href="/" method="get">
+            <strong>
+                  <em>
+                    <% if @logotexts.present? %>
+                        <% @logotexts.each do |logotext| %>
+                            <%= logotext.text %>
+                        <% end %>
+                    <% else %>
+                        The Docimer Project          
+                    <% end %>
+                  </em>
+            </strong>
+        </a>
+    </li>
+    <div style="float:right">
+        <% @pages.each do |page| %>
+            <li><%= link_to page.title, page, class: "header3", method: :get %></li>
+        <% end %>
+    <% @sections.each do |section| %>
+          <% if section.option.empty? %>
+          <% else %>
+          <li><%= link_to "Blogs", blogs_path, class: "header3", method: :get %></li>
+    <% end %><% end %>
+    </div>    
+    </ul>

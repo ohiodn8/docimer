@@ -1,0 +1,11 @@
+<h1>New Logotext</h1>
+
+<% if  Logotext.all.count == 1 %>
+<div class="container">
+    <br><br>
+    <h1>Logo text <em>exist</em> now. Edit or Delete the current Logo text</h1>
+    <br><br>
+</div>    
+<% else %>
+<%= render 'form', logotext: @logotext %>
+<% end %>

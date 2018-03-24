@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Body Color</h1>
+    <%= form_with(model: body_color, local: true) do |form| %>
+      <% if body_color.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(body_color.errors.count, "error") %> prohibited this body_color from being saved:</h2>
+
+          <ul>
+          <% body_color.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= form.label :name %><br>
+        <%= form.text_field :name, required: :true %>
+          <p><small>e.g. Silver</small></p><br>
+      </div>
+
+      <div class="field">
+        <%= form.label :color %><br>
+        <%= form.text_field :color, id: :body_color_color %>
+          <p><small>e.g. #C0C0C0</small></p><br>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Submit", method: :get %>
+      </div>
+    <% end %>
+</div>

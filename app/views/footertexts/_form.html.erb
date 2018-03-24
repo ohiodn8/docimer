@@ -1,0 +1,22 @@
+<%= form_with(model: footertext, local: true) do |form| %>
+  <% if footertext.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(footertext.errors.count, "error") %> prohibited this footertext from being saved:</h2>
+
+      <ul>
+      <% footertext.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_field :text, id: :footertext_text %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

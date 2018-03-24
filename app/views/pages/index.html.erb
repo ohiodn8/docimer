@@ -1,0 +1,13 @@
+<div class="container">
+    <h1><u>Pages</u></h1>
+        <% @pages.each do |page| %>
+          <tr>
+            <h3><%= link_to page.title, page %></h3>
+            <%= link_to 'EDIT', edit_page_path(page), method: :get, class: "btn btn-sm btn-info" %>
+            <td><%= link_to 'DELETE', page, class: "btn btn-sm btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
+          <hr>
+        <% end %>
+    <br>
+
+    <%= link_to 'New Page', new_page_path %>
+</div>

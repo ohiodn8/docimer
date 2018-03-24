@@ -1,0 +1,22 @@
+<%= form_with(model: navtext, local: true) do |form| %>
+  <% if navtext.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(navtext.errors.count, "error") %> prohibited this navtext from being saved:</h2>
+
+      <ul>
+      <% navtext.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_field :text, id: :navtext_text %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

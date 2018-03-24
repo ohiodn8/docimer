@@ -1,0 +1,34 @@
+<div class="container">
+    <%= form_with(model: page, local: true) do |form| %>
+      <% if page.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+          <ul>
+          <% page.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :sub_title %>
+        <%= form.text_field :sub_title, class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= form.label :body %>
+        <%= form.text_area :body, id: :summernote, row: 45 %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Submit", method: :get %>
+      </div>
+    <% end %>
+</div>

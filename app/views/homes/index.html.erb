@@ -1,0 +1,35 @@
+<% if cmsadmin_signed_in? %>
+    <% @homes.each do |home| %>  
+        <div class="image-header" style="color: none; background-color: none;">
+            <%= image_tag home.image.url(:medium), width: "100%", height: "800px", style: "opacity:0.4;" %>
+            <div class="centered">
+                <h1 style="color: <%= home.header_text_color %>; font-size: <%= home.text_size %>px;"><%= best_in_place home, :title, :place_holder => "Click me to add content!" %><small><small><span class="glyphicon glyphicon-pencil"></span></small></small></h1>
+                <h3 style="color:"><%= best_in_place home, :sub_title, :place_holder => "Click me to add content!" %><small><span class="glyphicon glyphicon-pencil"></span></small></h3>    
+            </div>
+        </div>
+        <div class="
+                    <% @templates.each do |template| %>
+                        <% if template.bar == 5 %>container-fluid<% else %>container<% end %>
+                    <% end%>">
+            <p><%= home.body.html_safe %></p>
+        </div>      
+    <% end %>
+
+<% else %>
+    <% @homes.each do |home| %>  
+        <div class="image-header" style="color: none; background-color: none;">
+            <%= image_tag home.image.url(:medium), width: "100%", height: "800px", style: "opacity:0.4;" %>
+            <div class="centered">
+      <h1 style="color: <%= home.header_text_color %>; font-size: <%= home.text_size %>px;"><%= home.title %></h1>
+      <h3><%= home.sub_title %></h3>
+            </div>
+        </div>
+        <div class="
+                    <% @templates.each do |template| %>
+                        <% if template.bar == 5 %>container-fluid<% else %>container<% end %>
+                    <% end%>">
+            <p><%= home.body.html_safe %></p>
+        </div>      
+    <% end %>            
+<% end %>
+    <br><br><br><br>

@@ -1,0 +1,64 @@
+<div class="container">
+    <%= form_with(model: home, local: true) do |form| %>
+      <% if home.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(home.errors.count, "error") %> prohibited this home from being saved:</h2>
+
+          <ul>
+          <% home.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field col-md-12">
+        <div class="col-md-8">   
+            <%= form.file_field :image, class: "form-control" %>
+        </div>    
+        <div class="col-md-4" align="right">  
+            <%= image_tag form.object.image.url, width: "100px" %>
+        </div>
+      </div><br>
+    
+      <div class="field col-md-12">
+      <div class="col-md-8"><br>
+        <%= form.label :title %><br>
+        <%= form.text_field :title, class: "form-control" %><br>
+      </div>
+    
+    <div class="col-md-2"><br>
+      <%= form.label :Title_Text_Size %><br>
+      <%= form.select(:text_size,{ "normal" => "42", "medium" => "62", "big" => "76", "extra" => "90"}) %> <br>
+    </div>
+    
+    
+    <div class="col-md-2"><br>
+      <%= form.label :Title_Text_Color %><br>
+      <%= form.select(:header_text_color,{ "BlueViolet" => "#8A2BE2", "Brown" => "#A52A2A", "DarkSlateBlue" => "#483D8B", "CadetBlue" => "#5F9EA0", "DarkSlateGray" => "#2F4F4F"}) %> <br> 
+    </div>  
+    </div>          
+
+      <div class="field col-md-12"><br>
+        <%= form.label :sub_title %><br>
+        <%= form.text_field :sub_title, class: "form-control" %>
+      </div><br>
+
+      <div class="field col-md-12"><br>
+        <%= form.label :body %>  
+        <div  id="myGrid"><%= form.text_area :body, id: :summernote, row: 45 %></div>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+    </div>
+
+        <script>
+            $('#myGrid').gridEditor({
+                new_row_layouts: [[12], [6,6], [9,3]],
+            });   
+            // Call this to get the result after the user has done some editing:
+            var html = $('#myGrid').gridEditor('getHtml');
+        </script>

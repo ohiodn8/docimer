@@ -1,0 +1,11 @@
+<h1>New Footertext</h1>
+
+<% if  Footertext.all.count == 1 %>
+<div class="container">
+    <br><br>
+    <h1>Footer text <em>exist</em> now. Edit or Delete the current Footer text</h1>
+    <br><br>
+</div>    
+<% else %>
+<%= render 'form', footertext: @footertext %>
+<% end %>

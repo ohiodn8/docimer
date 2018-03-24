@@ -1,0 +1,12 @@
+<% if  Home.all.count == 1 %>
+<div class="container">
+    <br><br>
+    <h1>Home Page Already Exist. Edit or Delete the Current Home Page</h1>
+    <br><br>
+    <%= link_to 'Back', homes_path %>
+</div>    
+<% else %>
+<h1>New Home</h1>
+<%= render 'form', home: @home %>
+<% end %>
+

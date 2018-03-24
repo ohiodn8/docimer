@@ -1,0 +1,2 @@
+class Logotext < ApplicationRecord
+end
