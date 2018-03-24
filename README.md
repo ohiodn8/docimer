@@ -36,6 +36,8 @@ http://localhost:3000/cmsadmins/sign_up
 
 * ...
 
+ <img src="https://github.com/ohiodn8/Docimer/blob/master/docs/docimer-screenshot.png" alt="docimer-screenshot" height="450" width="450"> 
+
 
 ## The <a href="https://ohiodn8.github.io/Docimer/" target="_blank">link</a> provides a better guide to installing Docimer.
 

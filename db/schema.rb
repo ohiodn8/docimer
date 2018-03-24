@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20180321200548) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
-    t.string "image"
     t.string "image_file_name"
     t.string "image_content_type"
     t.integer "image_file_size"
@@ -67,23 +66,6 @@ ActiveRecord::Schema.define(version: 20180321200548) do
     t.index ["text_color_id"], name: "index_designs_on_text_color_id"
   end
 
-  create_table "docimers", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_docimers_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_docimers_on_reset_password_token", unique: true
-  end
-
   create_table "footertexts", force: :cascade do |t|
     t.string "text"
     t.datetime "created_at", null: false
@@ -122,14 +104,6 @@ ActiveRecord::Schema.define(version: 20180321200548) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "miscellaneous", force: :cascade do |t|
-    t.string "logo_text"
-    t.string "footer_text"
-    t.string "nav_text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "navtexts", force: :cascade do |t|
     t.string "text"
     t.datetime "created_at", null: false
@@ -139,14 +113,6 @@ ActiveRecord::Schema.define(version: 20180321200548) do
   create_table "pages", force: :cascade do |t|
     t.string "title"
     t.string "sub_title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "slug"
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -163,8 +129,6 @@ ActiveRecord::Schema.define(version: 20180321200548) do
     t.integer "bar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "console"
-    t.index ["console"], name: "index_templates_on_console"
   end
 
   create_table "text_colors", force: :cascade do |t|
