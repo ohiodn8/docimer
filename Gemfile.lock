@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/codahale/bcrypt-ruby.git
+  revision: f2db689ba567d1a018f4dacb1ccf909adc93e887
+  specs:
+    bcrypt (3.1.11)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,7 +49,6 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (8.2.0)
       execjs
-    bcrypt (3.1.11-x86-mingw32)
     best_in_place (3.1.1)
       actionpack (>= 3.2)
       railties (>= 3.2)
@@ -69,10 +74,10 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.12.2)
+    coffee-script-source (1.8.0)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
-    devise (4.4.3)
+    devise (4.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 6.0)
@@ -122,7 +127,6 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
-    pg (1.0.0-x86-mingw32)
     public_suffix (3.0.2)
     puma (3.11.3)
     rack (2.0.4)
@@ -212,20 +216,20 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  bcrypt
+  bcrypt!
   best_in_place
   bootstrap-sass (~> 3.3.7)
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
-  devise
+  coffee-script-source (= 1.8.0)
+  devise (~> 4.3)
   friendly_id
   hirb
   jbuilder (~> 2.5)
   jquery-rails
   mail_form
   paperclip
-  pg
   puma (~> 3.7)
   rails (~> 5.1.4)
   sass-rails (~> 5.0)

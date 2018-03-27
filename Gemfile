@@ -6,11 +6,11 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.4'
-gem 'sqlite3', group: :development
-gem 'pg', group: :production
+# gem 'pg', group: :production
 gem 'best_in_place'
+gem 'coffee-script-source', '1.8.0'
 gem 'friendly_id'
-gem 'devise' 
+gem 'devise', '~> 4.3'
 gem 'mail_form'
 gem 'paperclip'
 gem 'hirb'
@@ -26,18 +26,16 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
-# gem 'bcrypt', '~> 3.1.7'
-gem 'bcrypt', platforms: :ruby
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'sqlite3'    
 end
 
 group :development do
