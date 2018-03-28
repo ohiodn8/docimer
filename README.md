@@ -20,7 +20,7 @@ download</a> the zip version (remember to unzip).
 
 In the command prompt (for Windows) =>
 
-Find the folder and cd into it. e.g. C:/sites/Docimer
+Place the app folder where you want it. e.g. C:/sites/Docimer
 
 <pre><code>cd \sites/Docimer</code></pre>
 
