@@ -31,7 +31,7 @@
     <br>
     <%= render "cmsadmins/shared/links" %> 
         <br>
-        <h4>Please keep your password safe. If misplaced, you will not be able to recover it.</h4>  
+        <h4>Please keep your password safe. If misplaced, you will not be able to recover it.</h4>
 <% else %>    
     <br><br><br>    
     <h3>Sorry, you cannot access this page.</h3><br>
@@ -40,5 +40,7 @@
     <pre><code>
         Cmsadmin.create!(email: "you@example.com", password: "misplaced", password_confirmation: "misplaced")
     </code></pre>
+    <br>
+    <%= render "cmsadmins/shared/links" %>
 <% end %>    
 </div>
