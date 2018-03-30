@@ -4,6 +4,14 @@
 
 The idea is to develop websites with ease (and without having to write codes).
 
+## Docimer on Heroku
+You can launch Docimer on Heroku using the Heroku Button below:
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+NB: Image upload is supported on the app, but Heroku app filesystems does not support permanent storage. S3 integration via Heroku addons will be added in a new release.
+
+If you decide not to launch Docimer on Heroku, you can follow the steps below to install on your server/local machine
+
 ## Dependencies 
    <a href="http://www.imagemagick.org/script/download.php" target="_blank">ImageMagick</a>
    Install ImageMagick (if you don't already have it), and continue with the steps below.
