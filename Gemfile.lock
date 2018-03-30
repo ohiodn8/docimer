@@ -127,6 +127,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
+    pg (1.0.0-x86-mingw32)
     public_suffix (3.0.2)
     puma (3.11.3)
     rack (2.0.4)
@@ -230,6 +231,7 @@ DEPENDENCIES
   jquery-rails
   mail_form
   paperclip
+  pg (>= 0.18, < 2.0)
   puma (~> 3.7)
   rails (~> 5.1.4)
   sass-rails (~> 5.0)
