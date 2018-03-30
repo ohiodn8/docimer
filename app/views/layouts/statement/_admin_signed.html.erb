@@ -1,0 +1,26 @@
+<% if @designs.present? %>
+        <% @designs.each do |design| %>
+            <div class="col-md-9"  style="color: <%= design.text_color.color %>; background-color: <%= design.body_color.color %>;">
+        <% end %>    
+    <% else %> 
+        <div class="col-md-9"  style="color: #000; background-color: #fff;">    
+<% end %>     
+    <% if @templates.present? %>        
+        <%= render "layouts/templating" %>
+    <% else %> 
+        <%= render "layouts/hd/header" %>                
+    <% end %> 
+    <!-- FLASH --> 
+    <% if flash %> <% flash.each do |name, msg| %> 
+        <div class="alert alert-danger alert-dismissable" style="position:absolute; z-index:999; width: 95%;"> 
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> 
+          <h4><%= content_tag(:div, msg, class: "text-center") %></h4> 
+        </div> 
+      <% end %> 
+    <% end %>       
+    <%= yield %>
+        <%= render "layouts/footer" %> 
+</div>     
+<div class="col-md-3">      
+      <%= render "layouts/docimer_sidebar" %>
+</div> 

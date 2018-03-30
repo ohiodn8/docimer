@@ -1,0 +1,14 @@
+{
+  "name": "docimer sample",
+  "description": "Ruby on Rails CMS",
+  "repository": "https://github.com/ohiodn8/docimer",
+  "logo": "https://raw.githubusercontent.com/ohiodn8/docimer/master/app/assets/images/medium/missing.png",
+  "success_url": "/cmsadmins/sign_up",    
+  "keywords": ["Rails", "docimer", "CMS", "static pages", "ohiodn8"],
+  "env": {
+    "SECRET_TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+    <% if @designs.present? %>
+            <% @designs.each do |design| %>
+                <body  style="color: <%= design.text_color.color %>; background-color: <%= design.body_color.color %>;">
+            <% end %>    
+        <% else %> 
+            <body  style="color: #000; background-color: #fff;">    
+    <% end %> 
+        <% if @templates.present? %>        
+            <%= render "layouts/templating" %>
+        <% else %> 
+            <%= render "layouts/hd/header" %>                
+        <% end %>  
+        <!-- FLASH --> 
+         <% flash.each do |name, msg| %> 
+            <div class="alert alert-warning alert-dismissable" style="position:absolute; z-index:999; width: 100%;"> 
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> 
+              <h4><%= content_tag(:div, msg, class: "text-center") %></h4> 
+            </div> 
+         <% end %>        
+    <%= yield %> 
+<%= render "layouts/footer" %>    
+</body>
