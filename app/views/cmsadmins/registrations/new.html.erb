@@ -1,5 +1,6 @@
 <div class="container">    
-<% if Cmsadmin.count == 0 %>  
+<% if Cmsadmin.count == 0 %>
+    <h1>Welcome to Docimer!</h1><br>
     <h2>Sign up</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

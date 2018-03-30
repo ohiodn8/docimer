@@ -10,5 +10,8 @@
       "description": "A secret key for verifying the integrity of signed cookies.",
       "generator": "secret"
     }
-  }
+  },
+  "scripts": {
+    "postdeploy": "heroku run rake db:migrate"
+  }    
 }
