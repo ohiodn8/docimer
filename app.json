@@ -12,6 +12,6 @@
     }
   },
   "scripts": {
-    "postdeploy": "heroku run rake db:migrate"
+    "postdeploy": "bundle exec rake db:migrate"
   }    
 }
