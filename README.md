@@ -11,7 +11,7 @@ The idea is to develop websites with ease (and without having to write codes).
 
 ## Installing Docimer
 
-* first download the <a href="http://installrails.com" target="_blank">rails installer</a> <a href="http://installrails.com/steps/choose_os" target="_blank">here</a> (that's if you don't have rails running on your machine).
+* first download the <a href="http://installrails.com/steps/choose_os" target="_blank">rails installer</a> <a href="http://installrails.com/steps/choose_os" target="_new">here</a> (that's if you don't have rails running on your machine).
 
 * Next Step: you have to clone the Docimer app from the GitHub repository, or <a href="https://github.com/ohiodn8/Docimer/archive/master.zip" target="_blank">
 download</a> the zip version (remember to unzip).
@@ -20,7 +20,7 @@ download</a> the zip version (remember to unzip).
 
 In the command prompt (for Windows) =>
 
-Find the folder and cd into it. e.g. C:/sites/Docimer
+Place the app folder where you want it. e.g. C:/sites/Docimer
 
 <pre><code>cd \sites/Docimer</code></pre>
 
