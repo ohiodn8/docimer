@@ -1,6 +1,6 @@
 {
-  "name": "docimer sample",
-  "description": "Ruby on Rails CMS",
+  "name": "docimer",
+  "description": "Ruby on Rails CMS for staic pages and blogs",
   "repository": "https://github.com/ohiodn8/docimer",
   "logo": "https://raw.githubusercontent.com/ohiodn8/docimer/master/app/assets/images/medium/missing.png",
   "success_url": "/cmsadmins/sign_up",    
