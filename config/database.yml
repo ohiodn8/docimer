@@ -18,10 +18,9 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  host: localhost 
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  adapter: mysql2
+  encoding: utf8
   database: docimer_production
+  pool: 5
   username: docimer
   password: <%= ENV['DOCIMER_DATABASE_PASSWORD'] %>
