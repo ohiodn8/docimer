@@ -117,7 +117,6 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
-    mysql2 (0.5.0-x86-mingw32)
     nio4r (2.3.0)
     nokogiri (1.8.2-x86-mingw32)
       mini_portile2 (~> 2.3.0)
@@ -128,6 +127,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
+    pg (1.0.0-x86-mingw32)
     public_suffix (3.0.2)
     puma (3.11.3)
     rack (2.0.4)
@@ -230,8 +230,8 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   mail_form
-  mysql2
   paperclip
+  pg (>= 0.18, < 2.0)
   puma (~> 3.7)
   rails (~> 5.1.4)
   sass-rails (~> 5.0)
