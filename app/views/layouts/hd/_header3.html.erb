@@ -1,19 +1,13 @@
 <!-- Static navbar -->
 <ul class="docile-bar navbar" style="background-color: #A9A9A9;">
-    <li>
-        <a class="header3 active" href="/" method="get">
-            <strong>
-                  <em>
-                    <% if @logotexts.present? %>
-                        <% @logotexts.each do |logotext| %>
-                            <%= logotext.text %>
-                        <% end %>
-                    <% else %>
-                        The Docimer Project          
-                    <% end %>
-                  </em>
-            </strong>
-        </a>
+    <li>    
+        <% if @logotexts.present? %>
+            <% @logotexts.each do |logotext| %>
+                <strong><em><%= link_to logotext.text, "/", method: :get, class: "header3" %></em></strong>
+            <% end %>
+        <% else %>  
+          <strong><em><%= link_to "The Docimer Project", "/", method: :get, class: "header3" %></em></strong>
+        <% end %>           
     </li>
     <div style="float:right">
         <% @pages.each do |page| %>
