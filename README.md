@@ -8,7 +8,7 @@ The idea is to develop websites with ease (and without having to write codes).
 You can launch Docimer on Heroku using the Heroku Button below: <br><br>
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ohiodn8/docimer)
 
-NB: <small>Image upload is supported on the app, but Heroku app filesystems does not support permanent storage. S3 integration via Heroku addons will be added in a new release.</small>
+NB: <small>image upload for heroku has been added</small>
 
 ### You can follow the steps below to install on your server/local machine
 
