@@ -1,6 +1,7 @@
 <br><br>
 <div class="push"></div>
 <!--==========================Docimer Sticky Footer============================--> 
+<% if !cmsadmin_signed_in? %>
   <footer class="navbar footer">
     
  <br>
@@ -23,7 +24,9 @@
           </div>
         </div>
       </div>
-  </footer><!-- #footer -->
+  </footer>
+<% end %>
+<!-- #footer -->
 <script>
 	$(window).load(function(){
 		$('.footer').stickyFooter();
