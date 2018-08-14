@@ -30,7 +30,9 @@ In the command prompt (for Windows) =>
 
 Place the app folder where you want it. e.g. C:/sites/Docimer
 
-<pre><code>cd \sites/Docimer</code></pre>
+<pre><code>git clone https://github.com/ohiodn8/docimer.git</code></pre>
+
+<pre><code>cd docimer</code></pre>
 
 <pre><code>bundle install</code></pre>
 
