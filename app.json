@@ -11,9 +11,9 @@
       "generator": "secret"
     }
   },
-  "addons": [
+  "addons": [{
     "plan": "cloudinary:starter"
-  ],    
+  }],    
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate"
   }    
