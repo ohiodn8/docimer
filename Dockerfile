@@ -1,13 +1,24 @@
-FROM ruby:2.6.3-alpine3.9
+FROM ruby:2.2.0
 
-ENV RAILS_ENV=production
-RUN apk add --no-cache git ruby-dev build-base libxml2-dev libxslt-dev libffi-dev tzdata nodejs
-RUN git clone https://github.com/ohiodn8/docimer /docimer
-WORKDIR /docimer
-RUN rm -rf Gemfile.lock
-RUN bundle install --deployment --without development --without test
-RUN bundle exec rails assets:precompile
-RUN apk del git ruby-dev build-base libxml2-dev libxslt-dev libffi-dev nodejs
-RUN rm -rf /docimer/tmp /docimer/vendor/**/*.o
-EXPOSE 3000
-ENTRYPOINT ["bundle", "exec", "rails", "s", "-b", "0.0.0.0"]
+RUN apt-get update -qq && apt-get install -y build-essential
+
+# for postgres
+RUN apt-get install -y libpq-dev
+
+# for nokogiri
+RUN apt-get install -y libxml2-dev libxslt1-dev
+
+# for capybara-webkit
+RUN apt-get install -y libqt4-webkit libqt4-dev xvfb
+
+# for a JS runtime
+RUN apt-get install -y nodejs
+
+ENV APP_HOME /docimer
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
+
+ADD Gemfile* $APP_HOME/
+RUN bundle install
+
+ADD . $APP_HOME
