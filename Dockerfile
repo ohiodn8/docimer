@@ -4,7 +4,7 @@ ENV RAILS_ENV=production
 RUN apk add --no-cache git ruby-dev build-base libxml2-dev libxslt-dev libffi-dev tzdata nodejs
 RUN git clone https://github.com/ohiodn8/docimer /docimer
 WORKDIR /docimer
-RUN gem install bundler:2.0.1
+RUN rm -rf Gemfile.lock
 RUN bundle install --deployment --without development --without test
 RUN bundle exec rails assets:precompile
 RUN apk del git ruby-dev build-base libxml2-dev libxslt-dev libffi-dev nodejs
