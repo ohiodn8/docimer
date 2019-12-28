@@ -1,5 +1,5 @@
 FROM ruby:2.5-alpine3.10
-RUN apk add --no-cache git ruby-dev build-base libxml2-dev libxslt-dev libffi-dev tzdata nodejs gmp-dev libpq postgresql-client
+RUN apk add --no-cache git ruby-dev build-base libxml2-dev libxslt-dev libffi-dev tzdata nodejs gmp-dev libpq postgresql-client=9.6.9-r0
 RUN git clone https://github.com//ohiodn8/docimer /docimer
 WORKDIR /docimer
 RUN rm -rf Gemfile.lock
