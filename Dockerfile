@@ -1,4 +1,4 @@
-FROM ruby:2.5
+FROM ruby:2.5-alpine3.10
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 RUN git clone https://github.com//ohiodn8/docimer /docimer
 WORKDIR /docimer
