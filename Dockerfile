@@ -4,7 +4,6 @@ RUN git clone https://github.com//ohiodn8/docimer /docimer
 WORKDIR /docimer
 #RUN rm -rf Gemfile.lock
 RUN gem install bundler
-RUN bundle update bundler
 RUN bundle install
 COPY . /docimer
 
