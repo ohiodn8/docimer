@@ -1,5 +1,5 @@
 FROM ruby:2.5-alpine3.10
-RUN apk --update add git ruby-dev build-base libxml2-dev libxslt-dev libffi-dev nodejs tzdata postgresql-dev postgresql-client imagemagick sqlite
+RUN apk --update add git ruby-dev build-base libxml2-dev libxslt-dev libffi-dev nodejs tzdata postgresql-dev postgresql-client imagemagick sqlite sqlite-dev
 RUN git clone https://github.com//ohiodn8/docimer /docimer
 WORKDIR /docimer
 RUN rm -rf Gemfile.lock
