@@ -2,6 +2,7 @@ FROM ruby:2.5
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 RUN git clone https://github.com//ohiodn8/docimer /docimer
 WORKDIR /docimer
+RUN gem install bundler
 RUN bundle install
 COPY . /docimer
 
